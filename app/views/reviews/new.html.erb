@@ -1,0 +1,28 @@
+<%= form_for @review, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+  
+  <%= f.label :film_title %><br>
+  <%= f.text_field :film_title %><br>
+  
+  <%= f.label :studio %><br>
+  <%= f.text_field :studio %><br>
+  
+  <%= f.label :director %><br>
+  <%= f.text_field :director %><br><br>
+
+  <%= f.label :number_of_stars %><br>
+  <% (1..10).each do |star| %>
+  <br>
+    <%= f.label star %> 
+    <%= f.radio_button(:number_of_stars, star) %>
+  <% end %>
+
+
+
+  <br><br>
+  <%= f.label :review %><br>
+  <%= f.text_area :review, size: "60x12" %><br>
+  <%= f.label :review_author %><br>
+  <%= f.text_field :review_author %><br>
+  
+  <%= f.submit "create" %>
+<% end %>
