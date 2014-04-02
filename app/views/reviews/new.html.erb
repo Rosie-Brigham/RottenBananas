@@ -1,5 +1,17 @@
 <%= form_for @review, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
-  
+    
+  <% if @review.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+ 
+    <ul>
+    <% @review.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
   <%= f.label :film_title %><br>
   <%= f.text_field :film_title %><br>
   
