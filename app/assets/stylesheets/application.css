@@ -1,13 +1,42 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
- */
+body {
+  background-color: #F8FFC4;
+  font-family: Helvetica;
+  color: #620CE8;
+  text-align: center;
+  margin: 0px;
+}
+
+.THEBOX {
+  background-color: #0DBFFF;
+  padding: 20px;
+  width: 500px;
+  height: 100%;
+  margin-left: 33%;
+  border-radius: 5px;
+  margin-top: 150px;
+/*  min-width: 100%;*/
+}
+
+.header {
+  background-color: #0DBFFF;
+  padding: 20px;
+  width: 100%;
+  }
+
+.review_box {
+  background-color: white;
+  border-radius: 4px;
+
+}
+
+  @media screen and (max-width: 1000px) {
+   .THEBOX {
+    margin-left: 20%;
+   } 
+  }
+
+  @media screen and (max-width: 600px) {
+   .THEBOX {
+    margin-left: 5%;
+   } 
+  }

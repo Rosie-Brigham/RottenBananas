@@ -1,5 +1,10 @@
-<h1>Review for <%= @review.film_title %></h1>
+<h1>Review for <%= @review.film.title %></h1>
 
 
 <%= @review.director %>
 <p><%= @review.review %></p>
+<p><%= @review.review_author %></p>
+
+<%= link_to 'Films', films_path %>
+
+<%= link_to @review.film.title, film_path(@review.film) %>

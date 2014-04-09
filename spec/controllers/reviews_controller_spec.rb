@@ -17,7 +17,7 @@ describe ReviewsController do
     describe "with valid params" do
       it "saves a record" do
         expect {
-          post :create, review: {film_title: "Brave", studio: "Pixar", director: "Disney", review: "Mixed feelings", number_of_stars: "6", review_author: "Barry Norman"}
+          post :create, review: {film_id: "Brave", studio: "Pixar", director: "Disney", review: "Mixed feelings", number_of_stars: "6", review_author: "Barry Norman"}
         }.to change{ Review.count }.from(0).to(1)
       end
     end

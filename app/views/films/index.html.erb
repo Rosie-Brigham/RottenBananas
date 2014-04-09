@@ -1,0 +1,9 @@
+<h1>Films (click for reviews)</h1>
+<% @films.each do |film| %><br>
+<%= link_to film.title, film_path(film) %><br>
+<%= film.director %><br>
+<%= film.studio %><br>
+<% end %>
+<div>
+<h1><%= link_to 'Add a film', new_film_path %></h1>
+</div>

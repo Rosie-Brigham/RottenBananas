@@ -11,19 +11,13 @@
     </ul>
   </div>
 <% end %>
-
-  <%= f.label :film_title %><br>
-  <%= f.text_field :film_title %><br>
   
-  <%= f.label :studio %><br>
-  <%= f.text_field :studio %><br>
-  
-  <%= f.label :director %><br>
-  <%= f.text_field :director %><br><br>
 
+  <%= f.label :film_id %><br>
+  <%= f.collection_select(:film_id, Film.all, :id, :title) %><br>
+  
   <%= f.label :number_of_stars %><br>
   <% (1..10).each do |star| %>
-  <br>
     <%= f.label star %> 
     <%= f.radio_button(:number_of_stars, star) %>
   <% end %>
@@ -38,3 +32,6 @@
   
   <%= f.submit "create" %>
 <% end %>
+
+<%= link_to 'Films', films_path %>
+

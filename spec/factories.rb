@@ -4,12 +4,18 @@
 FactoryGirl.define do
 
   factory :review do
-    film_title "Brave"
+    film_id "Brave"
     studio "Pixar"
     director "Disney"
     number_of_stars "6"
     review "Mixed feelings"
     review_author "Barry Norman"
+  end
+
+  factory :film do
+    title "Lives of Others"
+    studio "somewhere German"
+    director "can't remember"
   end
 
 end

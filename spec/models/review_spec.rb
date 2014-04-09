@@ -4,17 +4,10 @@ describe Review do
 
   describe "validations" do
     it "validates presence of a film title" do
-      subject.should have(1).error_on(:film_title)
+      subject.should have(1).error_on(:film_id)
     end
 
-    it "validates presence of a director" do
-      subject.should have(1).error_on(:director)
-    end
-
-    it "validates presence of a studio" do
-      subject.should have(1).error_on(:studio)
-    end
-
+    
     it "validates presence of a review" do
       subject.should have(1).error_on(:review)
     end

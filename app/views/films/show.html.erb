@@ -1,0 +1,26 @@
+<h1>Film: <%= @film.title %></h1>
+
+
+<p>Director: <%= @film.director %></p>
+<p>Studio: <%= @film.studio %></p>
+
+<!--  -->
+<!-- add reviews in here -->
+
+<% @film.reviews.each  do |review| %>
+  <div class="review_box">
+    <p>
+      <h3><%= review.review_author %></h3>
+    </p>
+    <p>
+      <%= review.number_of_stars %> out of 10
+    </p>
+    <p><strong>Review:</strong>
+      <em><%= review.review %></em>
+    </p>
+  </div>
+<% end %>
+
+<%= link_to 'List of films', films_path %>
+
+<%= link_to 'Add a review for this film', new_review_path %>
