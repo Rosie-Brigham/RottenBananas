@@ -2,7 +2,6 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
-
   end
 
   def create
@@ -23,10 +22,23 @@ class ReviewsController < ApplicationController
     @reviews = Review.all
   end
 
+  def update
+    @review = Review.find(params[:id])
+    if @review.update(review_params)
+      redirect_to @review
+    else
+      render 'edit'
+    end
+  end
+
+  def edit
+    @review = Review.find(params[:id])
+  end
+
   private
 
   def review_params
-    params.require(:review).permit(:film_id,  
-      :review, :number_of_stars, :review_author)
+    params.require(:review).permit(:film_id, :review, :number_of_stars, :review_author)
   end
+
 end

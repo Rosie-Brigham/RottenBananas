@@ -23,6 +23,19 @@ class FilmsController < ApplicationController
     @films = Film.all
   end
 
+  def update
+    @film = Film.find(params[:id])
+    if @film.update(film_params)
+      redirect_to @film
+    else
+      render 'edit'
+    end
+  end
+
+  def edit
+    @film = Film.find(params[:id])
+  end
+
   private
 
   def film_params
