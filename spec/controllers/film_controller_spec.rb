@@ -66,7 +66,16 @@ describe FilmsController do
     end
   end
 
-
+  describe "DELETE #destroy" do
+    it "deletes a film" do
+      #  # Make sure we've saved the review before the then delete it!
+       @film = FactoryGirl.create(:film)
+       expect {
+       delete :destroy, id: @film.id 
+       }.to change{ Film.count }.from(1).to(0)       
+      
+    end 
+  end
 
   it "has an index action" do
     get :index

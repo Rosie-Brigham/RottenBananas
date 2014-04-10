@@ -64,6 +64,17 @@ describe ReviewsController do
     end
   end
 
+  describe "DELETE #destroy" do
+    it "deletes a review" do
+      #  # Make sure we've saved the review before the then delete it!
+       @review = FactoryGirl.create(:review)
+       expect {
+       delete :destroy, id: @review.id 
+       }.to change{ Review.count }.from(1).to(0)       
+      
+    end 
+  end
+
 
 
   it "has an index action" do

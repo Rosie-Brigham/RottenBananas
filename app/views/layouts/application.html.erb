@@ -10,6 +10,12 @@
   <div class=header>
     <h1>ROTTEN BANANAS</h1>
   </div>
+  <div>
+    <%= flash[:notice] %>
+  </div>
+  <div>
+    <%= flash[:warning] %>
+  </div>
 <div class="THEBOX">
 <%= yield %>
 </div>

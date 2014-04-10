@@ -36,6 +36,13 @@ class FilmsController < ApplicationController
     @film = Film.find(params[:id])
   end
 
+  def destroy
+    @film = Film.find(params[:id])
+    @film.destroy
+
+    redirect_to films_path  notice: "That film has been deleted."
+  end
+
   private
 
   def film_params
