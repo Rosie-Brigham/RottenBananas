@@ -10,6 +10,8 @@ FactoryGirl.define do
     number_of_stars "6"
     review "Mixed feelings"
     review_author "Barry Norman"
+
+    association :film
   end
 
   factory :film do
