@@ -1,0 +1,34 @@
+<h1>Editing film</h1>
+ 
+<%= form_for :film, url: film_path(@film), method: :patch do |f| %>
+  <% if @film.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@film.errors.count, "error") %> prohibited
+      this film from being saved:</h2>
+    <ul>
+    <% @film.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <p>
+  <%= f.label :title %><br>
+  <%= f.text_field :title %><br>
+  
+  <%= f.label :studio %><br>
+  <%= f.text_field :studio %><br>
+  
+  <%= f.label :director %><br>
+  <%= f.text_field :director %><br><br>
+
+
+
+
+  <br><br>
+
+  
+  <%= f.submit "Update" %>
+<% end %></p>
+ 
+<%= link_to 'Back', films_path %>

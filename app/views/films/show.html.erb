@@ -18,9 +18,13 @@
     <p><strong>Review:</strong>
       <em><%= review.review %></em>
     </p>
+    <%= link_to 'See Review', review_path(review) %>
   </div>
 <% end %>
 
-<%= link_to 'List of films', films_path %>
+
+<%= link_to 'List of films', films_path %> 
 
 <%= link_to 'Add a review for this film', new_review_path %>
+
+<%= link_to 'Edit Film', edit_film_path(@film) %>

@@ -1,0 +1,36 @@
+<h1>Editing review</h1>
+ 
+<%= form_for :review, url: review_path(@review), method: :patch do |f| %>
+  <% if @review.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@review.errors.count, "error") %> prohibited
+      this review from being saved:</h2>
+    <ul>
+    <% @review.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <p>
+  <%= f.label :film_id %><br>
+  <%= f.collection_select(:film_id, Film.all, :id, :title) %><br>
+  
+  <%= f.label :number_of_stars %><br>
+  <% (1..10).each do |star| %>
+    <%= f.label star %> 
+    <%= f.radio_button(:number_of_stars, star) %>
+  <% end %>
+
+
+
+  <br><br>
+  <%= f.label :review %><br>
+  <%= f.text_area :review, size: "60x12" %><br>
+  <%= f.label :review_author %><br>
+  <%= f.text_field :review_author %><br>
+  
+  <%= f.submit "create" %>
+<% end %></p>
+ 
+<%= link_to 'Back', reviews_path %>
