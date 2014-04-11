@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
   
   def new
     @review = Review.new
+    @review.film = Film.find(params[:film_id])
   end
 
   def create

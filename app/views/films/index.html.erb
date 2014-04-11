@@ -2,14 +2,6 @@
 
   <h1>Films (click for reviews)</h1>
 
-<div>
-    <%form_tag films_path, :method => 'get' do %>
-    <p>
-      <%= text_field_tag :search, params[:search] %>
-      <%= submit_tag "Search", :name => nil %>
-    </p>
-    <% end %>
-  </div>
   
 <% @films.each do |film| %><br>
 <%= link_to film.title, film_path(film) %><br>

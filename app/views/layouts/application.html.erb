@@ -8,8 +8,9 @@
 </head>
 <body>
   <div class=header>
-    <h1>ROTTEN BANANAS</h1>
-    <img class="logo" src="http://albaliving.com/wp-content/uploads/2013/05/rotten-bananas1.jpg" alt="Some rotten bananas" />
+    <h1>ROTTEN 
+    <%= image_tag('banana.png', :alt => 'banana logo', :class => 'banana') %>
+   BANANAS</h1>
     <ul>
       <li><%= link_to 'Films', films_path %></li>
       <li><%= link_to 'Reviews', reviews_path %></li>
@@ -23,18 +24,14 @@
       </li>
     </ul>    
     <% end %>
-  </div>
-
   <div>
-    <%form_tag films_path, :method => 'get' do %>
+    <%=form_tag films_path, :method => 'get' do %>
     <p>
       <%= text_field_tag :search, params[:search] %>
       <%= submit_tag "Search", :name => nil %>
     </p>
     <% end %>
   </div>
-
-  <div>
     <%= flash[:notice] %>
   </div>
   <div>

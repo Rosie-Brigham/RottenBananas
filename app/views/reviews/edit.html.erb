@@ -1,6 +1,6 @@
 <h1>Editing review</h1>
  
-<%= form_for :review, url: review_path(@review), method: :patch do |f| %>
+<%= form_for @review, url: review_path(@review), method: :patch do |f| %>
   <% if @review.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@review.errors.count, "error") %> prohibited
@@ -14,7 +14,8 @@
   <% end %>
   <p>
   <%= f.label :film_id %><br>
-  <%= f.collection_select(:film_id, Film.all, :id, :title) %><br>
+  <%= f.collection_select(:film_id, Film.all, :id, :title) %>
+<br>
   
   <%= f.label :number_of_stars %><br>
   <% (1..10).each do |star| %>
