@@ -5,11 +5,9 @@ FactoryGirl.define do
 
   factory :review do
     film_id "Brave"
-    studio "Pixar"
-    director "Disney"
     number_of_stars "6"
-    review "Mixed feelings"
-    review_author "Barry Norman"
+    comment "Mixed feelings"
+    author "Barry Norman"
 
     association :film
   end
@@ -20,4 +18,8 @@ FactoryGirl.define do
     director "can't remember"
   end
 
+  factory :user do
+    email "foo@foo.com"
+    password "fooooooo"
+  end
 end

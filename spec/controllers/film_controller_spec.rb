@@ -5,6 +5,10 @@ describe FilmsController do
   let(:film) { FactoryGirl.create(:film) }
   let(:review) {FactoryGirl.create(:review)}
 
+  before do
+    sign_in FactoryGirl.create(:user)
+  end
+  
   it "should create a new film" do
     get :new
     response.should be_ok

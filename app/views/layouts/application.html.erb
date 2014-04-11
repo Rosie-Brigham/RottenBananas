@@ -9,12 +9,39 @@
 <body>
   <div class=header>
     <h1>ROTTEN BANANAS</h1>
+    <img class="logo" src="http://albaliving.com/wp-content/uploads/2013/05/rotten-bananas1.jpg" alt="Some rotten bananas" />
+    <ul>
+      <li><%= link_to 'Films', films_path %></li>
+      <li><%= link_to 'Reviews', reviews_path %></li>
+    <% if user_signed_in? %>
+      <li>
+      <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+      </li>
+    <% else %>
+      <li>
+      <%= link_to('Login', new_user_session_path)  %>  
+      </li>
+    </ul>    
+    <% end %>
   </div>
+
+  <div>
+    <%form_tag films_path, :method => 'get' do %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", :name => nil %>
+    </p>
+    <% end %>
+  </div>
+
   <div>
     <%= flash[:notice] %>
   </div>
   <div>
     <%= flash[:warning] %>
+  </div>
+  <div>
+    <%= flash[:alert] %>
   </div>
 <div class="THEBOX">
 <%= yield %>

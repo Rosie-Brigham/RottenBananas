@@ -2,8 +2,8 @@
 <% @reviews.each do |review| %>
 <div>
   <%= review.film.title %>: <%= review.film.director %>
-  <p><%= review.review %></p>
+  <p><%= review.comment %></p>
 </div>
 <% end %>
 
-<%= link_to 'List of films', films_path %> 
+<%#= link_to 'List of films', films_path %> 

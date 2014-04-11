@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
-
+    before_filter :authenticate_user!, except:[:index, :show]
+  
   def new
     @review = Review.new
   end
@@ -45,7 +46,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:film_id, :review, :number_of_stars, :review_author)
+    params.require(:review).permit(:film_id, :comment, :number_of_stars, :author)
   end
 
 end

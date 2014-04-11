@@ -11,22 +11,27 @@ body {
   padding: 20px;
   width: 500px;
   height: 100%;
-  margin-left: 33%;
+/*  margin-left: 33%;*/
   border-radius: 5px;
   margin-top: 150px;
+  display: inline-block;
+  text-align: center;
 /*  min-width: 100%;*/
 }
 
 .header {
   background-color: #0DBFFF;
   padding: 20px;
-  width: 100%;
   }
 
 .review_box {
   background-color: white;
   border-radius: 4px;
 
+}
+
+.logo {
+  width: 250px;
 }
 
   @media screen and (max-width: 1000px) {
@@ -39,4 +44,12 @@ body {
    .THEBOX {
     margin-left: 5%;
    } 
+  }
+
+  ul {
+        list-style-type: none;
+  }
+
+  li {
+    display: inline;
   }

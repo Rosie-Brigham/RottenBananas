@@ -10,20 +10,20 @@
 <% @film.reviews.each  do |review| %>
   <div class="review_box">
     <p>
-      <h3><%= review.review_author %></h3>
+      <h3><%= review.author %></h3>
     </p>
     <p>
       <%= review.number_of_stars %> out of 10
     </p>
     <p><strong>Review:</strong>
-      <em><%= review.review %></em>
+      <em><%= review.comment %></em>
     </p>
     <%= link_to 'See Review', review_path(review) %>
   </div>
 <% end %>
 
 
-<%= link_to 'List of films', films_path %> 
+<%#= link_to 'List of films', films_path %> 
 
 <%= link_to 'Add a review for this film', new_review_path %>
 

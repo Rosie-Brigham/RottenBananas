@@ -1,8 +1,9 @@
 class FilmsController < ApplicationController
+before_action :authenticate_user!, except:[:index, :show]
+
 
   def new
     @film = Film.new
-
   end
 
   def create
@@ -20,7 +21,8 @@ class FilmsController < ApplicationController
   end
 
   def index
-    @films = Film.all
+    @films = Film.search(params[:search])
+    # @films = Film.all
   end
 
   def update

@@ -4,6 +4,11 @@ describe ReviewsController do
 
   let(:film) { FactoryGirl.create(:film) }
   let(:review) {FactoryGirl.create(:review)}
+  
+  before do
+    sign_in FactoryGirl.create(:user)
+  end
+
 
   it "has a new action" do
     get :new
@@ -20,9 +25,9 @@ describe ReviewsController do
     describe "with valid params" do
       it "edits a record" do
 
-          put :update, id: review.id, review: {film_id: film.id, review: "well good", number_of_stars: "6", review_author: "Barry Norman"}
+          put :update, id: review.id, review: {film_id: film.id, comment: "well good", number_of_stars: "6", author: "Barry Norman"}
           review.reload
-          review.review.should eq "well good"
+          review.comment.should eq "well good"
         
       end
 
@@ -30,7 +35,7 @@ describe ReviewsController do
         # Make sure we've saved the review before the expect block!
         review = FactoryGirl.create(:review) 
         expect {
-         put :update, id: review.id, review: {film_id: film.id, review: "Mixed feelings", number_of_stars: "6", review_author: "Barry Norman"}
+         put :update, id: review.id, review: {film_id: film.id, comment: "Mixed feelings", number_of_stars: "6", author: "Barry Norman"}
         }.to_not change{ Review.count }
       end
     end
@@ -42,7 +47,7 @@ describe ReviewsController do
     describe "with valid params" do
       it "saves a record" do
         expect {
-          post :create, review: {film_id: film.id, review: "Mixed feelings", number_of_stars: "6", review_author: "Barry Norman"}
+          post :create, review: {film_id: film.id, comment: "Mixed feelings", number_of_stars: "6", author: "Barry Norman"}
         }.to change{ Review.count }.from(0).to(1)
       end
     end
@@ -50,7 +55,7 @@ describe ReviewsController do
 
     describe 'with invalid params' do
       let(:invalid_params) do
-        { review: {film_title: "", studio: "", director: "", review: "", number_of_stars: "", review_author: ""} }
+        { review: { comment: "", number_of_stars: "", author: ""} }
       end
       it "it does not save a record" do
         expect {

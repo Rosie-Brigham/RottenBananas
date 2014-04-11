@@ -9,7 +9,7 @@ describe Review do
 
     
     it "validates presence of a review" do
-      subject.should have(1).error_on(:review)
+      subject.should have(1).error_on(:comment)
     end
 
 
@@ -19,7 +19,7 @@ describe Review do
     end
 
     it "validates presence of a review author" do
-      subject.should have(1).error_on(:review_author)
+      subject.should have(1).error_on(:author)
     end
   end
 

@@ -1,5 +1,6 @@
 RottenBananas::Application.routes.draw do
  
+  devise_for :users
   resources :reviews
 
   resources :films
@@ -10,7 +11,7 @@ RottenBananas::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
-  root 'films#index'
+  root 'films#homepage'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

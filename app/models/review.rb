@@ -7,10 +7,11 @@
 
 class Review < ActiveRecord::Base
   belongs_to :film
+  belongs_to :user
 
   validates :film_id, presence: true 
-  validates :review, presence: true
-  validates :review_author, presence: true
+  validates :comment, presence: true
+  validates :author, presence: true
   validates :number_of_stars, inclusion: { in: 1..10 }
 
   

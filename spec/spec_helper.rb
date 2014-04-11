@@ -12,6 +12,10 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
+# Use Warden for feature test logins.
+include Warden::Test::Helpers
+Warden.test_mode!
+
 RSpec.configure do |config|
   # ## Mock Framework
   #
@@ -20,7 +24,7 @@ RSpec.configure do |config|
   # config.mock_with :mocha
   # config.mock_with :flexmock
   # config.mock_with :rr
-
+  config.include Devise::TestHelpers, type: :controller
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
