@@ -4,6 +4,7 @@ body {
   color: #620CE8;
   text-align: center;
   margin: 0px;
+  font-size: 18px;
 }
 
 .THEBOX {
@@ -20,9 +21,20 @@ body {
 }
 
 .header {
-  background-color: #0DBFFF;
+  background-color: white;
   padding: 20px;
+  color: black;
   }
+
+.header:hover {
+  -webkit-filter: invert(100%); 
+}
+
+
+
+h1 {
+  font-size: 3em;
+}
 
 .review_box {
   background-color: white;
@@ -34,16 +46,32 @@ body {
   width: 250px;
 }
 
+.banana {
+  height: 40px
+}
+
   @media screen and (max-width: 1000px) {
    .THEBOX {
     margin-left: 20%;
    } 
+   .banana {
+    height: 30px
+   }
+   body {
+    font-size: 12px;
+   }
   }
 
   @media screen and (max-width: 600px) {
    .THEBOX {
     margin-left: 5%;
    } 
+   .banana {
+    height: 20px
+   }
+   body {
+    font-size: 8px;
+   }
   }
 
   ul {
