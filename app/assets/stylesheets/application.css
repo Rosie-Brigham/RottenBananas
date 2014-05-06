@@ -1,39 +1,48 @@
 body {
-  background-color: #F8FFC4;
+  background-color: #3A3A39;
   font-family: Helvetica;
-  color: #620CE8;
+  color: #333;
   text-align: center;
   margin: 0px;
   font-size: 18px;
 }
 
 .THEBOX {
-  background-color: #0DBFFF;
+  background-color: whitesmoke;
   padding: 20px;
   width: 500px;
   height: 100%;
-/*  margin-left: 33%;*/
-  border-radius: 5px;
+  /*  margin-left: 33%;*/
+  border-radius: 2px;
   margin-top: 150px;
   display: inline-block;
   text-align: center;
-/*  min-width: 100%;*/
+  /*  min-width: 100%;*/
 }
 
 .header {
-  background-color: white;
+  background-color: whitesmoke;
   padding: 20px;
   color: black;
-  }
+}
 
 .header:hover {
-  -webkit-filter: invert(100%); 
+  /*-webkit-filter: invert(100%);*/
+  background-color:#3A3A39;
+  color:whitesmoke; 
+}
+
+.header:hover ~ .THEBOX {background:rgb(250, 234, 119);}
+
+.header h1 {
+  color: rgb(250, 234, 119);
 }
 
 
 
 h1 {
   font-size: 3em;
+  
 }
 
 .review_box {
@@ -47,37 +56,38 @@ h1 {
 }
 
 .banana {
-  height: 40px
+  height: 40px;
+  cursor: pointer;
 }
 
-  @media screen and (max-width: 1000px) {
-   .THEBOX {
-    margin-left: 20%;
-   } 
-   .banana {
-    height: 30px
-   }
-   body {
-    font-size: 12px;
-   }
-  }
+@media screen and (max-width: 1000px) {
+ .THEBOX {
+  margin-left: 20%;
+} 
+.banana {
+  height: 30px
+}
+body {
+  font-size: 12px;
+}
+}
 
-  @media screen and (max-width: 600px) {
-   .THEBOX {
-    margin-left: 5%;
-   } 
-   .banana {
-    height: 20px
-   }
-   body {
-    font-size: 8px;
-   }
-  }
+@media screen and (max-width: 600px) {
+ .THEBOX {
+  margin-left: 5%;
+} 
+.banana {
+  height: 20px
+}
+body {
+  font-size: 8px;
+}
+}
 
-  ul {
-        list-style-type: none;
-  }
+ul {
+  list-style-type: none;
+}
 
-  li {
-    display: inline;
-  }
+li {
+  display: inline;
+}

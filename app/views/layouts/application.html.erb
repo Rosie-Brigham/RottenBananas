@@ -3,45 +3,46 @@
 <head>
   <title>RottenBananas</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "jquery.js", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class=header>
-    <h1>ROTTEN 
-    <%= image_tag('banana.png', :alt => 'banana logo', :class => 'banana') %>
-   BANANAS</h1>
-    <ul>
-      <li><%= link_to 'Films', films_path %></li>
-      <li><%= link_to 'Reviews', reviews_path %></li>
-    <% if user_signed_in? %>
-      <li>
-      <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
-      </li>
-    <% else %>
-      <li>
-      <%= link_to('Login', new_user_session_path)  %>  
-      </li>
-    </ul>    
-    <% end %>
-  <div>
-    <%=form_tag films_path, :method => 'get' do %>
-    <p>
-      <%= text_field_tag :search, params[:search] %>
-      <%= submit_tag "Search", :name => nil %>
-    </p>
-    <% end %>
-  </div>
-    <%= flash[:notice] %>
-  </div>
-  <div>
-    <%= flash[:warning] %>
-  </div>
-  <div>
-    <%= flash[:alert] %>
-  </div>
-<div class="THEBOX">
-<%= yield %>
-</div>
-</body>
+  <div class="header">
+    <h1>ROTTEN
+          <%= image_tag('banana.png', :alt => 'banana logo', :class => 'banana') %>
+          BANANAS</h1><div id='secrets'></div>
+      <ul>
+        <li><%= link_to 'Films', films_path %></li>
+        <li><%= link_to 'Reviews', reviews_path %></li>
+        <% if user_signed_in? %>
+        <li>
+          <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+        </li>
+        <% else %>
+        <li>
+          <%= link_to('Login', new_user_session_path)  %>  
+        </li>
+      </ul>    
+      <% end %>
+      <div>
+        <%=form_tag films_path, :method => 'get' do %>
+        <p>
+          <%= text_field_tag :search, params[:search] %>
+          <%= submit_tag "Search", :name => nil %>
+        </p>
+        <% end %>
+      </div>
+      <%= flash[:notice] %>
+    </div>
+    <div>
+      <%= flash[:warning] %>
+    </div>
+    <div>
+      <%= flash[:alert] %>
+    </div>
+    <div class="THEBOX">
+      <%= yield %>
+    </div>
+  </body>
 </html>

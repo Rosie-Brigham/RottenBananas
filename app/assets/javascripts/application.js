@@ -14,3 +14,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready( function() {
+  $(".banana").on("click", function(){
+    var message = $("<div>nomnomnomnomom banana film<img src='http://umbrelr.com/wp-content/uploads/2014/02/Minion-Banana-Despicable-Me-2-Wallpaper.jpg' width=100px/></div>");
+    $("#secrets").append(message);
+    $(".banana").remove();
+  });
+});
+
